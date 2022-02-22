@@ -1,0 +1,12 @@
+**/node_modules/**
+**/dist/**
+**/.vscode/**
+**/.history/**
+**/.lh/**
+**/.git/**
+**/.github/**
+**/.cache/**
+**/.tmp/**
+*.test.*
+*.spec.*
+*.bak
