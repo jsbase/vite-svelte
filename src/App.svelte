@@ -1,7 +1,7 @@
 <script>
-  // import { FormInfo, RouteValues } from './stores.js';
+  //import * as store from './stores.js';
   import { createEventDispatcher } from 'svelte';
-  import { get, set } from 'svelte/store';
+  import { writeable } from 'svelte/store';
   import { beaker, formula } from 'svelte-formula';
   import Toggler from './components/Toggler.svelte';
   import Icon from '@iconify/svelte';
