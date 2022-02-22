@@ -1,18 +1,20 @@
 <script>
-  import { routingTables } from './stores.js';
-  import { createEventDispatcher } from 'svelte';
-  import { writeable } from 'svelte/store';
-  import { beaker, formula } from 'svelte-formula';
-  import Toggler from './components/Toggler.svelte';
+  //import { routingTables } from './stores.js';
+  //import { createEventDispatcher } from 'svelte';
+  //import { writeable } from 'svelte/store';
+  //import { beaker, formula } from 'svelte-formula';
+  import SvelteForm from './components/SvelteForm.svelte';
+  //import Toggler from './components/Toggler.svelte';
   import Icon from '@iconify/svelte';
-  import closeFilled from '@iconify/icons-carbon/close-filled';
-  import addFilled from '@iconify/icons-carbon/add-filled';
-  import clearOutlined from '@iconify/icons-ant-design/clear-outlined';
-  import arrowReset24Filled from '@iconify/icons-fluent/arrow-reset-24-filled';
+  //import closeFilled from '@iconify/icons-carbon/close-filled';
+  //import addFilled from '@iconify/icons-carbon/add-filled';
+  //import clearOutlined from '@iconify/icons-ant-design/clear-outlined';
+  //import arrowReset24Filled from '@iconify/icons-fluent/arrow-reset-24-filled';
   import save24Filled from '@iconify/icons-fluent/save-24-filled';
   // import SearchBar from './components/SearchBar.svelte'; 
   // import Results from './components/Results.svelte';
 
+  /*
   const dispatch = createEventDispatcher();
   const { form, formValues, updateForm } = formula();
   const RouteManager = beaker();
@@ -64,6 +66,8 @@
     
     dispatch('save', newRoute);
   }
+  */
+
 </script>
 
 <main>
@@ -71,15 +75,25 @@
        alt="Logo"
        class="mx-auto h-12 w-auto" />
 
+  <SvelteForm />
+
+  <button title="save" type="button" on:click={ console.log }>
+    <span class="group-focus:hidden">save</span>
+    <Icon icon={save24Filled} />
+  </button>
+
+  <!--
   <form use:form on:submit|preventDefault={onSumbit} class="max-w-md w-full space-y-8 bg-slate-100 rounded-xl p-8 dark:bg-slate-800">
-    <!-- <label for="rtName">Create new routing table</label>
+    <!--
+    <label for="rtName">Create new routing table</label>
     <input name="rtName"
       id="rtName"
       type="text"
       placeholder="Name of the new routing table."
       required
       class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-      bind:value={RouteList.routename} /> -->
+      bind:value={RouteList.routename} />
+    ->
 
     <button title="save" type="submit">
       <span class="group-focus:hidden">save</span>
@@ -157,7 +171,7 @@
           </div>
         </div>
 
-        <!-- Default checkbox -->
+        <!-- Default checkbox ->
         <div class="flex items-start">
           <div class="ml-3 text-sm">
             <input name="tags"
@@ -176,7 +190,7 @@
           </div>
         </div>
 
-        <!-- README: https://tailwindcomponents.com/component/toggle-switch -->
+        <!-- README: https://tailwindcomponents.com/component/toggle-switch ->
         <!--div class="flex items-start">
           <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
             <input type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
@@ -184,9 +198,10 @@
             <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
           </div>
           <label for="toggle" class="text-xs text-gray-700">Toggle me</label>
-        </div-->
+        </div>
+        ->
 
-        <!-- README: alpinejs switch toggle approach -->
+        <!-- README: alpinejs switch toggle approach ->
         <!--
         ...
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
@@ -205,13 +220,14 @@
             />
           </div>
         </div>
-        -->
+        ->
 
         <!--div class="flex justify-center items-center">
           <Toggler name="tags" value="tag-1" />
           <Toggler name="tags" value="tag-2" />
           <Toggler name="tags" value="tag-3" />
-        </div-->
+        </div>
+        ->
       </fieldset>
 
       <div class="bg-gradient--blue min-h-full flex items-center justify-center py-12 px-4">
@@ -222,6 +238,7 @@
       {/each}
     </div>
   </form>
+  -->
 </main>
 
 <style type="postcss">
@@ -232,7 +249,6 @@ img {
 button {
   @apply pt-4 py-5 pb-5;
 }
-
 /*
 .toggle-checkbox:checked {
   @apply right-0 border-green-400;
@@ -244,7 +260,6 @@ button {
   @apply bg-green-400;
   background-color: #68D391;
 }
-*/
 
 input:checkbox,
 input:checkbox,
@@ -261,4 +276,5 @@ input:checkbox:active {
 .form-text {
   @apply appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 rounded-t-md;
 }
+*/
 </style>
