@@ -36,12 +36,7 @@ jobs:
     - name: Install dependencies and build
       run: |
         npm i
-        npm run build
-    
-    - name: Install dependencies and export
-      run: |
-        npm i
-        npm run export
+        vite build
 
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v1
