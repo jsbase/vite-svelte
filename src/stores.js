@@ -1,3 +1,7 @@
-import { writable } from 'svelte/store';
+import { get, set, writable } from 'svelte/store';
 
-export const routingTables = writable([]);
+let routes = writable([]);
+
+export const setRoute = set;
+
+export default get(routes);

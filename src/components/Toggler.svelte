@@ -1,5 +1,5 @@
 <script>
-// import { routingTables } from './stores.js';
+import { getRoutes, set } from './../stores.js';
 
 let id = `toggler--${Math.random()}`
 let name = name;
