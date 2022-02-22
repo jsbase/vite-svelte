@@ -1,29 +1,32 @@
 <script>
-import { routingTables } from './stores.js';
+// import { routingTables } from './stores.js';
 
 let id = `toggler--${Math.random()}`
 let name = name;
 let value = value;
 
-let {
-  formInfo,
-  formValues
-} = routingTables;
+// let {
+//  formInfo,
+//  formValues
+// } = routingTables;
 
-$: fValues = formValues.length === 1 ? formValues[0] : formValues;
+//$: fValues = formValues.length === 1 ? formValues[0] : formValues;
 
 function save(payload) {
-  fValues routingTables.push(payload);
+  console.log('save: ', payload);
+  
+  // routingTables.push(payload);
 
-  set(fValues);
+  // set(routingTables);
 }
 </script>
 
-<input {{ id }}
-       {{ name }}
-       {{ value }}
-       on:input={save} bind:group={checkbox}
-       type="checkbox" class="hidden">
+<input id="{ id }"
+       name="{ name }"
+       value="{ value }"
+       type="checkbox"
+       class="hidden"
+       on:input={ save } bind:group={ name } />
 
 <label for="{ id }">
 	<span title="{ name.toUpperCase() }"></span>

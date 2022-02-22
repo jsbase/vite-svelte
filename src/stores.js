@@ -1,3 +1,3 @@
-import { writable } from 'svelte/store';
+import { writable, set, get } from 'svelte/store';
 
 export const routingTables = writable([]);
