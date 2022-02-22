@@ -1,5 +1,5 @@
 <script>
-  //import * as store from './stores.js';
+  import { routingTables } from './stores.js';
   import { createEventDispatcher } from 'svelte';
   import { writeable } from 'svelte/store';
   import { beaker, formula } from 'svelte-formula';
