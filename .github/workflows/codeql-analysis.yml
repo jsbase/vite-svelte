@@ -35,7 +35,7 @@ jobs:
     
     - name: Install dependencies and build
       run: |
-        npm i
+        npm i && npm i vite
         vite build
 
     - name: Initialize CodeQL
