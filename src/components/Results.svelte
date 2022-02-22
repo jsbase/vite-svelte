@@ -4,6 +4,9 @@
  * 
  * https://tailwindcss.com/docs/hover-focus-and-other-states#
  **/
+import { get } from '@writeable';
+
+let routerListData = get(formValues);
 </script>
 
 <main>
@@ -15,7 +18,7 @@
         <img class="h-10 w-10 rounded-full" alt="" src="https://images.unsplash.com/photo-1532417344469-368f9ae6d187?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=60" />
 
         <div class="ml-3 overflow-hidden">
-          <p class="text-sm font-medium text-slate-900">{routerItem.name}</p>
+          <p class="text-sm font-medium text-slate-900">{routerItem.title}</p>
           <p class="text-sm text-slate-500 truncate">{routerItem.url}</p>
 
           <ul role="list" class="pt-3 pb-0 divide-y divide-slate-200">
