@@ -2,9 +2,9 @@
 /**
  * README
  * 
- * https://tailwindcss.com/docs/hover-focus-and-other-states#
+ * https://tailwindcss.com/docs/hover-focus-and-other-states
  **/
-import { get } from '@writeable';
+import { get } from '../stores.js';
 
 let routerListData = get(formValues);
 </script>
@@ -15,8 +15,6 @@ let routerListData = get(formValues);
     <ul role="list" class="p-6 divide-y divide-slate-200">
       {#each routerListData as routerItem}
       <li class="flex py-4 first:pt-0 last:pb-0">
-        <img class="h-10 w-10 rounded-full" alt="" src="https://images.unsplash.com/photo-1532417344469-368f9ae6d187?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=60" />
-
         <div class="ml-3 overflow-hidden">
           <p class="text-sm font-medium text-slate-900">{routerItem.title}</p>
           <p class="text-sm text-slate-500 truncate">{routerItem.url}</p>
@@ -37,16 +35,13 @@ let routerListData = get(formValues);
       <thead>
         <tr>
           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-            Name
-          </th>
-          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
             Title
           </th>
           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-            Status
+            URL
           </th>
           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-            Role
+            Tags
           </th>
           <th scope="col" class="relative px-6 py-3">
             <span class="sr-only">Edit</span>
@@ -60,7 +55,7 @@ let routerListData = get(formValues);
           <td class="px-6 py-4 whitespace-nowrap">
             <div class="flex items-center">
               <div class="flex-shrink-0 h-10 w-10">
-                <img class="h-10 w-10 rounded-full" alt="" src="https://images.unsplash.com/photo-1532417344469-368f9ae6d187?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=60" />
+                
               </div>
               <div class="ml-4">
                 <div class="text-sm font-medium text-gray-900">{routerItem.name}</div>

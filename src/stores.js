@@ -1,7 +1,6 @@
-import { get, set, writable } from 'svelte/store';
+import {get, writable} from 'svelte/store';
+import * as RouterDataBase from '../../db.json';
 
-let routes = writable([]);
+let routes = writable(RouterDataBase);
 
-export const setRoute = set;
-
-export default get(routes);
+export const Routers = get(routes);
