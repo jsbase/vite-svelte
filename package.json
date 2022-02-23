@@ -40,5 +40,9 @@
     "tailwindcss": "^3.0.23",
     "tldr": "3.3.7",
     "vite": "^2.8.0"
+  },
+  "dependencies": {
+    "json-server": "^0.17.0",
+    "svelte-json-tree": "^0.1.0"
   }
 }
