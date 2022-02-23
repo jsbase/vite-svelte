@@ -1,5 +1,4 @@
 <script>
-  //import { createEventDispatcher } from 'svelte';
   import Logo from '@iconify/svelte';
   import Icon from '@iconify/svelte';
   import save24Filled from '@iconify/icons-fluent/save-24-filled';
@@ -12,21 +11,6 @@
   import SvelteJsonTree from './components/SvelteJsonTree.svelte'
   import SvelteForm from './components/SvelteForm.svelte';
   import Results from './components/Results.svelte';
-
-  /*
-  const dispatch = createEventDispatcher();
-  
-  function onSumbit() {
-    let newRoute = {
-      formInfo: set(RouteManager.formInfo),
-      formValues: set(RouteManager.formValues),
-    };
-
-    console.log('before dispatch new route: ', newRoute);
-    
-    dispatch('save', newRoute);
-  }
-  */
 </script>
 
 <main>
@@ -34,7 +18,7 @@
 
   <SvelteJsonTree />
 
-  <SvelteForm />
+  <SvelteForm on:submit={onSumbit} />
 
   <button title="save" type="button" on:click={ console.log }>
     <span class="group-focus:hidden">save</span>
@@ -43,7 +27,6 @@
 
   <!--
   <form use:form on:submit|preventDefault={onSumbit} class="max-w-md w-full space-y-8 bg-slate-100 rounded-xl p-8 dark:bg-slate-800">
-    <!--
     <label for="rtName">Create new routing table</label>
     <input name="rtName"
       id="rtName"
@@ -52,7 +35,6 @@
       required
       class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
       bind:value={RouteList.routename} />
-    ->
 
     <button title="save" type="submit">
       <span class="group-focus:hidden">save</span>
@@ -149,44 +131,11 @@
           </div>
         </div>
 
-        <!-- README: https://tailwindcomponents.com/component/toggle-switch ->
-        <!--div class="flex items-start">
-          <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-            <input type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
-            
-            <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
-          </div>
-          <label for="toggle" class="text-xs text-gray-700">Toggle me</label>
-        </div>
-        ->
-
-        <!-- README: alpinejs switch toggle approach ->
-        <!--
-        ...
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
-        ...
-        <div class="flex justify-center items-center" x-data="{toggle: '0'}">
-          <div class="relative rounded-full w-12 h-6 transition duration-200 ease-linear" :class="[toggle === '1' ? 'bg-green-400' : 'bg-gray-400']">
-            <label for="tags-{i}-3" class="absolute left-0 bg-white border-2 mb-2 w-6 h-6 rounded-full transition transform duration-100 ease-linear cursor-pointer" :class="[toggle === '1' ? 'translate-x-full border-green-400' : 'translate-x-0 border-gray-400']">
-              Monthly
-            </label>
-
-            <input name="tags"
-              type="checkbox"
-              id="tags-{i}-3"
-              class="appearance-none w-full h-full active:outline-none focus:outline-none"
-              @click="toggle === '0' ? toggle = '1' : toggle = '0'"
-            />
-          </div>
-        </div>
-        ->
-
-        <!--div class="flex justify-center items-center">
+        <div class="flex justify-center items-center">
           <Toggler name="tags" value="tag-1" />
           <Toggler name="tags" value="tag-2" />
           <Toggler name="tags" value="tag-3" />
         </div>
-        ->
       </fieldset>
 
       <div class="bg-gradient--blue min-h-full flex items-center justify-center py-12 px-4">
@@ -208,32 +157,7 @@ img {
 button {
   @apply pt-4 py-5 pb-5;
 }
-/*
-.toggle-checkbox:checked {
-  @apply right-0 border-green-400;
-  right: 0;
-  border-color: #68D391;
-}
-
-.toggle-checkbox:checked + .toggle-label {
-  @apply bg-green-400;
-  background-color: #68D391;
-}
-
-input:checkbox,
-input:checkbox,
-input:checkbox {
-  @apply text-gray-700;
-}
-
-input:checkbox:hover,
-input:checkbox:focus,
-input:checkbox:active {
-  @apply text-gray-900;
-}
-
 .form-text {
   @apply appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 rounded-t-md;
 }
-*/
 </style>

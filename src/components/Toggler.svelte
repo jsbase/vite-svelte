@@ -1,23 +1,13 @@
 <script>
-import { getRoutes, set } from './../stores.js';
+//import Routers from '../stores.js';
+import { createEventDispatcher } from 'svelte';
 
 let id = `toggler--${Math.random()}`
 let name = name;
 let value = value;
 
-// let {
-//  formInfo,
-//  formValues
-// } = routingTables;
-
-//$: fValues = formValues.length === 1 ? formValues[0] : formValues;
-
-function save(payload) {
-  console.log('save: ', payload);
-  
-  // routingTables.push(payload);
-
-  // set(routingTables);
+function save(event) {
+  console.log('save: ', event);
 }
 </script>
 
@@ -31,6 +21,18 @@ function save(payload) {
 <label for="{ id }">
 	<span title="{ name.toUpperCase() }"></span>
 </label>
+
+<!-- README: https://tailwindcomponents.com/component/toggle-switch ->
+<!--
+<div class="flex items-start">
+  <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+    <input type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+    
+    <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+  </div>
+  <label for="toggle" class="text-xs text-gray-700">Toggle me</label>
+</div>
+-->
 
 <style type="postcss">
 label {
