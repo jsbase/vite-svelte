@@ -3,7 +3,7 @@
   //import { createEventDispatcher } from 'svelte';
   //import { writeable } from 'svelte/store';
   //import { beaker, formula } from 'svelte-formula';
-  import JsonSvelteList from './components/JSONTree.svelte'
+  import SvelteJsonTree from './components/SvelteJsonTree.svelte'
   import SvelteForm from './components/SvelteForm.svelte';
   //import Toggler from './components/Toggler.svelte';
   import Icon from '@iconify/svelte';
@@ -76,7 +76,7 @@
        class="mx-auto"
   />
 
-  <JSONTree />
+  <SvelteJsonTree />
 
   <SvelteForm />
 
