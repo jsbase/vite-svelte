@@ -1,7 +1,9 @@
 <script>
   import JSONTree from 'svelte-json-tree'
+  import * as Routers from '../db.json'
+
     // your json data to view
-      const value = {
+     /* const value = {
           array: [1, 2, 3],
               bool: true,
                   object: {
@@ -11,6 +13,6 @@
                                 		nested: [{
                                     			a: [1, '2', null, undefined]
                                           		}]
-                                                }
+                                                } */
                                                 </script>
-                                                <JSONTree {value} />
+                                                <JSONTree {Routers} />
