@@ -8,8 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "format:scripts": "prettier-eslint --write './src/**/*.{js,svelte}' ",
-    "format:styles": "prettier-stylelint --write './src/**/*.{css,svelte}' "
+    "format:prettier": "prettier --write --plugin-search-dir=. './src/**/*.svelte' --svelte-strict-mode=false",
+    "format:eslint": "prettier-eslint --write './src/**/*.{css,html,js,svelte}'"
   },
   "devDependencies": {
     "@iconify/icons-ant-design": "^1.2.1",
