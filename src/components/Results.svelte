@@ -1,10 +1,36 @@
 <script>
 import Icon from '@iconify/svelte';
-import editIcon from '@iconify/icons-akar-icons/edit';
-import JsonTree from 'svelte-json-tree';
-import Routers from '../stores.js';
+import save24Filled from '@iconify/icons-fluent/save-24-filled';
+//import editIcon from '@iconify/icons-akar-icons/edit';
 
-let routers = Routers;
+let routers = [
+  {
+    "id": 1,
+    "title": "Good Router 5000",
+    "url": "https://www.duckduckgo.com/",
+    "tags": [
+      "one",
+      "three"
+    ]
+  },
+  {
+    "title": "Super DupaX",
+    "url": "https:/brave.search.com",
+    "tags": [
+      "two"
+    ],
+    "id": 2
+  },
+  {
+    "title": "Mega Route",
+    "url": "https://searx.me",
+    "tags": [
+      "two",
+      "three"
+    ],
+    "id": 3
+  }
+];
 </script>
 
 <main>
@@ -12,14 +38,14 @@ let routers = Routers;
     <!-- example: list -->
     <section>
       <h1>unorderd list</h1>
-      <ul role="list" class="p-6 divide-y divide-slate-200">
+      <ul class="p-6 divide-y divide-slate-200">
         {#each routers as router}
         <li class="flex py-4 first:pt-0 last:pb-0">
           <div class="ml-3 overflow-hidden">
             <p class="text-sm font-medium text-slate-900">{router.title}</p>
             <p class="text-sm text-slate-500 truncate">{router.url}</p>
 
-            <ul role="list" class="pt-3 pb-0 divide-y divide-slate-200">
+            <ul class="pt-3 pb-0 divide-y divide-slate-200">
             {#each router.tags as tag}
               <li class="flex py-4 first:pt-0 last:pb-0">
                 <span class="ml-3 text-sm font-medium text-slate-900">{tag}</span>
@@ -30,7 +56,7 @@ let routers = Routers;
         {/each}
       </ul>
     </section>
-    
+
     <!-- example: table -->
     <section>
       <h1>table</h1>
@@ -57,7 +83,7 @@ let routers = Routers;
         </thead>
 
         <tbody>
-          {#each routerListData as router}     
+          {#each routerListData as router}
           <tr>
             <td class="px-6 py-4 whitespace-nowrap">
               <div class="flex items-center">
@@ -85,7 +111,16 @@ let routers = Routers;
             </td>
 
             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+              <!--
               <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+              -->
+
+              <SvelteForm on:submit={onSumbit} />
+
+              <button title="save" type="button" on:click={ console.log }>
+                <span class="group-focus:hidden">save</span>
+                <Icon icon={save24Filled} />
+              </button>
             </td>
           </tr>
           {/each}
@@ -98,7 +133,7 @@ let routers = Routers;
 <style>
 /**
  * README
- * 
+ *
  * https://tailwindcss.com/docs/hover-focus-and-other-states
  **/
 </style>

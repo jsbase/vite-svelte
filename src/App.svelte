@@ -1,16 +1,14 @@
 <script>
-  import Logo from '@iconify/svelte';
   import Icon from '@iconify/svelte';
-  import save24Filled from '@iconify/icons-fluent/save-24-filled';
+  import SvelteJsonTree from './components/SvelteJsonTree.svelte'
   //import closeFilled from '@iconify/icons-carbon/close-filled';
   //import addFilled from '@iconify/icons-carbon/add-filled';
   //import clearOutlined from '@iconify/icons-ant-design/clear-outlined';
   //import arrowReset24Filled from '@iconify/icons-fluent/arrow-reset-24-filled';
   //import Toggler from './components/Toggler.svelte';
-  import SearchBar from './components/SearchBar.svelte'; 
-  import SvelteJsonTree from './components/SvelteJsonTree.svelte'
-  import SvelteForm from './components/SvelteForm.svelte';
-  import Results from './components/Results.svelte';
+  //import SearchBar from './components/SearchBar.svelte';
+  //import SvelteForm from './components/SvelteForm.svelte';
+  import Logo from './components/Logo.svelte';
 </script>
 
 <main>
@@ -18,12 +16,9 @@
 
   <SvelteJsonTree />
 
-  <SvelteForm on:submit={onSumbit} />
-
-  <button title="save" type="button" on:click={ console.log }>
-    <span class="group-focus:hidden">save</span>
-    <Icon icon={save24Filled} />
-  </button>
+  <!--
+  <SvelteForm />
+  -->
 
   <!--
   <form use:form on:submit|preventDefault={onSumbit} class="max-w-md w-full space-y-8 bg-slate-100 rounded-xl p-8 dark:bg-slate-800">
@@ -64,7 +59,7 @@
           class="form-text focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 focus:outline-none sm:text-sm"
         />
       </fieldset>
-      
+
       <fieldset>
         <label for="url-{i}">URL</label>
         <input name="url"
@@ -150,14 +145,13 @@
 </main>
 
 <style type="postcss">
-img {
-  @apply h-4 w-4;
-}
-
+/*
 button {
   @apply pt-4 py-5 pb-5;
 }
+
 .form-text {
   @apply appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 rounded-t-md;
 }
+*/
 </style>
