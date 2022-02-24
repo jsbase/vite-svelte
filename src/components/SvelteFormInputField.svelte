@@ -6,12 +6,14 @@
   $: value = form?.field(name)?.value;
   $: state = field?.state; // example: { valid: false, error: 'Field is invalid!' }
 
-  /*function onInput (event) {
+  /*
+  function onInput (event) {
     console.log('onInput: ', event);
     form.validate();
-    
+
     // on:input={onInput}
-  }*/
+  }
+  */
 </script>
 
 <div class="input" class:error="{$state?.valid === false}">
@@ -20,14 +22,10 @@
 </div>
 
 <style lang="postcss">
-div {
-  font-family: "'Open Sans', 'Helvetica Neue', sans-serif"; 
-}
-
 input + .validation {
   display: none;
 }
-  
+
 .error .validation {
   display: block;
 }

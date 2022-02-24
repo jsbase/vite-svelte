@@ -15,6 +15,7 @@
     "@iconify/icons-akar-icons": "^1.2.1",
     "@iconify/icons-ant-design": "^1.2.1",
     "@iconify/icons-carbon": "^1.2.2",
+    "@iconify/icons-codicon": "^1.2.3",
     "@iconify/icons-fluent": "^1.2.2",
     "@iconify/svelte": "^2.1.2",
     "@rollup/plugin-json": "^4.1.0",

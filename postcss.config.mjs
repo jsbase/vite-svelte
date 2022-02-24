@@ -3,19 +3,23 @@ module.exports = {
     require('postcss-import'),
     require('tailwindcss/nesting')(require('postcss-nesting')),
     require('tailwindcss'),
-    require('postcss-preset-env')({
-      features: {
-        'nesting-rules': false,
-      },
-    }),
-  ],
-}; /*
+    require('postcss-preset-env')({ features: { 'nesting-rules': false } }) ],
+};
+/*
 import PostCssImporter from 'postcss-import';
-import TailwindResolver from 'tailwindcss';
+import PostcssPreset from 'postcss-preset-env';
+import TailwindNesting from 'tailwindcss/nesting';
+import PostcssNesting from 'postcss-nesting';
+import Tailwind from 'tailwindcss';
 import Autoprefixer from 'autoprefixer';
 
-const postCssConfig = {
-  plugins: [PostCssImporter(), TailwindResolver(), Autoprefixer()],
+export default {
+  plugins: [
+    PostCssImporter(),
+    TailwindNesting(PostcssNesting),
+    Tailwind(),
+    Autoprefixer(),
+    PostcssPreset({ features: { 'nesting-rules': false } }),
+  ],
 };
-
-export default postCssConfig; */
+*/

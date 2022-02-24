@@ -1,7 +1,6 @@
 <script>
 import Icon from '@iconify/svelte';
-import save24Filled from '@iconify/icons-fluent/save-24-filled';
-//import editIcon from '@iconify/icons-akar-icons/edit';
+import editIcon from '@iconify/icons-akar-icons/edit';
 
 let routers = [
   {
@@ -83,7 +82,7 @@ let routers = [
         </thead>
 
         <tbody>
-          {#each routerListData as router}
+          {#each routers as router}
           <tr>
             <td class="px-6 py-4 whitespace-nowrap">
               <div class="flex items-center">
@@ -115,11 +114,9 @@ let routers = [
               <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
               -->
 
-              <SvelteForm on:submit={onSumbit} />
-
               <button title="save" type="button" on:click={ console.log }>
-                <span class="group-focus:hidden">save</span>
-                <Icon icon={save24Filled} />
+                <span class="group-focus:hidden">edit</span>
+                <Icon icon={editIcon} />
               </button>
             </td>
           </tr>
@@ -132,8 +129,6 @@ let routers = [
 
 <style>
 /**
- * README
- *
- * https://tailwindcss.com/docs/hover-focus-and-other-states
+ * See: https://tailwindcss.com/docs/hover-focus-and-other-states
  **/
 </style>
