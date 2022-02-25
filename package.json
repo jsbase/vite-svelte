@@ -39,7 +39,6 @@
     "eslint": "^6.x.x",
     "eslint-plugin-svelte3": "^3.4.0",
     "install": "^0.13.0",
-    "node-sass": "^7.0.1",
     "npm": "^8.5.2",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.7",
@@ -67,6 +66,12 @@
     "svelte-check": "^2.4.5",
     "svelte-json-tree": "^0.1.0",
     "svelte-preprocess": "^4.10.4",
+    "svelte-reactive-preprocessor": "^0.8.0",
     "tailwindcss": "^3.0.23"
+  },
+  "dependencies": {
+    "json-server": "^0.17.0",
+    "node-sass": "^7.0.1",
+    "vite": "^2.8.4"
   }
 }
