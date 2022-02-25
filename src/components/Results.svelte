@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
 import Button from './Button.svelte';
 import Icon from '@iconify/svelte';
 import editIcon from '@iconify/icons-akar-icons/edit';

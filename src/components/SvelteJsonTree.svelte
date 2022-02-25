@@ -38,22 +38,6 @@ onMount(async () => {
   }); */
 </script>
 
-<h1>await</h1>
-{#await value}
-  <!-- pending -->
-  <p class="text-gray-600">Loading...</p>
-{:then value}
-  <!-- fulfilled -->
-  <p class="text-green-600">Loaded!</p>
+<div class="block w-full">
   <JsonTree {value} />
-{:catch error}
-  <!-- rejected -->
-  <p class="text-red-600">Something went wrong! (Error: {error.message})</p>
-{/await}
-
-<h1>simple if/else</h1>
-{#if value}
-  <JsonTree {value} />
-{:else}
-  <p class="text-red-600">Something went wrong!</p>
-{/if}
+</div>

@@ -1,43 +1,35 @@
 <script>
+// @ts-nocheck
 import Icon from '@iconify/svelte';
 import searchIcon from '@iconify/icons-bx/search';
-function onSearch(event) {
-  console.log('filterResults: ', event);
+
+/* function onSearch(event) {
+    console.log('filterResults: ', event);
+    // dispatch "search"
 }
+
+// on:click={onSearch}> */
 </script>
 
-<div class="z-40 select-none bg-gray-300">
-  <div class="relative z-50 mx-auto mt-36 w-4/6">
-    <div class="mb-3 h-16 w-full rounded-xl bg-white p-2 shadow-lg">
-      <!-- svelte-ignore a11y-autofocus -->
-      <input
-        name="search"
-        type="text"
-        placeholder="Search"
-        autofocus
-        class="form-text focus:border-blue-300 focus:outline-none focus:ring"
-      />
-    </div>
-
-    <button
-      title="search"
-      type="button"
-      class="rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"
-      on:click={onSearch}
-    >
-      <Icon icon={searchIcon} class="mr-4" />
-      <span>Search</span>
-    </button>
+<!-- svelte-ignore a11y-autofocus -->
+<nav class="flex w-full grow flex-col">
+  <div class="container mx-auto bg-white py-4 text-black">
+    <input
+      id="searchfield"
+      type="search"
+      placeholder="Search..."
+      autofocus="autofocus"
+      class="form-text focus:border-transparent focus:shadow-xl focus:outline-none" />
   </div>
-</div>
+</nav>
 
-<style scoped lang="postcss">
-/* see: https://tailwindcss.com/docs/hover-focus-and-other-states */
-button {
-  @apply rounded-t-md border border-teal-800 bg-teal-400 py-5 pt-4 pb-5 text-center text-lg font-medium text-white;
+<style global lang="postcss">
+/* stylelint-disable CssSyntaxError */
+/* button {
+  @apply rounded bg-indigo-500 py-2 px-4 font-bold text-white;
 }
-
+ */
 .form-text {
-  @apply relative block h-full w-full appearance-none rounded-t-md border border-gray-300 px-3 py-2 text-2xl placeholder-gray-500;
+  @apply w-full appearance-none rounded border bg-white p-6 p-2 text-xl leading-normal text-gray-800 shadow transition;
 }
 </style>

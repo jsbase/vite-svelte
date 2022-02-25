@@ -9,12 +9,9 @@ import './index.css';
 <header>
   <Logo />
 
-  <div class="text-5xl font-extrabold">
-    <span
-      class="bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent">
-      lancom help center
-    </span>
-  </div>
+  <h1 class="text-gray-dark mt-6 text-center text-5xl font-extrabold">
+    lancom help center
+  </h1>
 </header>
 
 <main>
@@ -39,7 +36,7 @@ header {
   @apply mb-6 px-6;
 }
 main {
-  @apply relative z-0 flex min-h-full w-full min-w-full items-center justify-center space-y-1 overflow-x-hidden overflow-y-scroll py-12 px-4 text-gray-700;
+  @apply relative z-0 min-h-full w-full min-w-full items-center justify-center space-y-1 overflow-x-hidden overflow-y-scroll py-12 px-4 text-gray-700;
 }
 
 footer {

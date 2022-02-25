@@ -11,6 +11,7 @@
     "browserslist": "npx browserslist --coverage=DE,global --mobile-to-desktop --ignore-unknown-versions && npx browserslist --update-db",
     "tailwind": "tailwindcss -i ./src/index.css -o ./dist/index.css",
     "preview": "vite preview",
+    "backend": "json-server -p 3303 -w './db.json'",
     "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. './src/**/*.svelte' && eslint --ignore-path .gitignore './src/**/*.svelte'",
     "format:prettier": "prettier --write --plugin-search-dir=. './src/**/*.svelte'",
     "format:eslint": "prettier-eslint --write './src/**/*.svelte'"

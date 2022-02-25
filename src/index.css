@@ -10,7 +10,7 @@
     }
 
     body {
-        @apply font-sans bg-slate-600;
+        @apply font-sans bg-gray-400;
     }
 
     h1 {
