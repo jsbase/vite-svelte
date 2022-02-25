@@ -1,20 +1,20 @@
 @tailwind base;
 
+html {
+    @apply font-sans;
+}
+
 @tailwind components;
 
 @tailwind utilities;
 
 @layer base {
-    html {
+    body {
         @apply font-sans;
     }
 
-    body {
-        @apply font-sans bg-gray-400;
-    }
-
     h1 {
-        @apply text-5xl font-semibold;
+        @apply text-5xl font-extrabold;
     }
 
     h2 {
@@ -30,6 +30,6 @@
     }
 
     h5 {
-        @apply text-xl font-semibold;
+        @apply text-xl font-extrabold;
     }
 }
