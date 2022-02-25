@@ -1,3 +1,10 @@
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  }
+}
+/*
 import PostCssImporter from 'postcss-import';
 import PostcssPreset from 'postcss-preset-env';
 import TailwindNesting from 'tailwindcss/nesting';
@@ -6,8 +13,6 @@ import Tailwind from 'tailwindcss';
 import Autoprefixer from 'autoprefixer';
 
 export default {
-  map: false,
-  parser: 'sugarss',
   plugins: [
     Autoprefixer(),
     PostCssImporter(),
@@ -15,5 +20,5 @@ export default {
     Tailwind(),
     TailwindNesting(PostcssNesting),
   ],
-  syntax: 'postcss-scss',
 };
+*/
