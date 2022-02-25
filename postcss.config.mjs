@@ -1,6 +1,17 @@
 module.exports = {
   map: false,
   parser: 'sugarss',
+  plugins: {
+    tailwindcss: {
+      config: './tailwindcss-config.js',
+    },
+    autoprefixer: {},
+  },
+};
+/*
+module.exports = {
+  map: false,
+  parser: 'sugarss',
   plugins: [
     require('postcss-import'),
     require('tailwindcss'),
@@ -10,7 +21,7 @@ module.exports = {
   ],
   syntax: 'postcss-scss',
 };
-/*
+
 import PostCssImporter from 'postcss-import';
 import PostcssPreset from 'postcss-preset-env';
 import TailwindNesting from 'tailwindcss/nesting';

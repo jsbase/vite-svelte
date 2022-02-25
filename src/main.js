@@ -1,5 +1,5 @@
-import App from 'App.svelte';
-//import '@/assets/css/main.css';
+// @ts-nocheck
+import App from './App.svelte';
 import './index.css';
 
 const app = new App({
