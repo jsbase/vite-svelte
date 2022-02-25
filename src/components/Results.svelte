@@ -1,28 +1,28 @@
 <script>
-  import Button from './Button.svelte';
-  import Icon from '@iconify/svelte';
-  import editIcon from '@iconify/icons-akar-icons/edit';
+import Button from './Button.svelte';
+import Icon from '@iconify/svelte';
+import editIcon from '@iconify/icons-akar-icons/edit';
 
-  let routers = [
-    {
-      id: 1,
-      title: 'Good Router 5000',
-      url: 'https://www.duckduckgo.com/',
-      tags: ['one', 'three'],
-    },
-    {
-      title: 'Super DupaX',
-      url: 'https:/brave.search.com',
-      tags: ['two'],
-      id: 2,
-    },
-    {
-      title: 'Mega Route',
-      url: 'https://searx.me',
-      tags: ['two', 'three'],
-      id: 3,
-    },
-  ];
+let routers = [
+  {
+    id: 1,
+    title: 'Good Router 5000',
+    url: 'https://www.duckduckgo.com/',
+    tags: ['one', 'three']
+  },
+  {
+    title: 'Super DupaX',
+    url: 'https:/brave.search.com',
+    tags: ['two'],
+    id: 2
+  },
+  {
+    title: 'Mega Route',
+    url: 'https://searx.me',
+    tags: ['two', 'three'],
+    id: 3
+  }
+];
 </script>
 
 <main>
@@ -60,20 +60,17 @@
           <tr>
             <th
               scope="col"
-              class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500"
-            >
+              class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
               Title
             </th>
             <th
               scope="col"
-              class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500"
-            >
+              class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
               URL
             </th>
             <th
               scope="col"
-              class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500"
-            >
+              class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
               Tags
             </th>
             <th scope="col" class="relative px-6 py-3">
@@ -109,8 +106,7 @@
                 {#each router.tags as tag}
                   <li class="flex py-4 first:pt-0 last:pb-0">
                     <span
-                      class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
-                    >
+                      class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">
                       {tag}
                     </span>
                   </li>
@@ -118,8 +114,7 @@
               </td>
 
               <td
-                class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium"
-              >
+                class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
                 <Button title="edit" on:click={console.log}>
                   <Icon icon={editIcon} />
                   <span class="group-focus:hidden">Edit</span>
@@ -133,17 +128,17 @@
   </div>
 </main>
 
-<style type="postcss">
-  /**
+<style scoped lang="postcss">
+/**
  * see: https://tailwindcss.com/docs/hover-focus-and-other-states
  */
-  table {
-    @apply w-full min-w-full divide-y divide-gray-200 p-4;
-  }
-  thead {
-    @apply bg-gray-50;
-  }
-  tbody {
-    @apply divide-y divide-gray-200 bg-white;
-  }
+table {
+  @apply w-full min-w-full divide-y divide-gray-200 p-4;
+}
+thead {
+  @apply bg-gray-50;
+}
+tbody {
+  @apply divide-y divide-gray-200 bg-white;
+}
 </style>

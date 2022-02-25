@@ -1,17 +1,12 @@
 import {writable, derived} from 'svelte/store';
-import * as currentRouters from '../db.json';
+//import * as currentRouters from '../db.json';
 
 /**
  * Store data
  */
-export const apiData = writable(currentRouters);
-export const routers = derived(
-  apiData,
-  ($apiData) =>
-    $apiData?.routers.map((r) => {
-      r.title, r.url, r.tags;
-    }) || []
-);
+let fallback = {routers: []};
+export const apiData = writable(/* currentRouters || */ fallback);
+export const routers = derived(apiData, ($apiData) => $apiData.routers || []);
 
 /**
  * Filter titles

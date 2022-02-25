@@ -1,7 +1,6 @@
-module.exports = {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
+module.exports = () => ({
+  content: ['./index.html', './src/index.css', './src/**/.svelte'],
   darkMode: 'media',
-  presets: [],
   theme: {
     colors: {
       blue: '#1fb6ff',
@@ -12,21 +11,13 @@ module.exports = {
       yellow: '#ffc82c',
       'gray-dark': '#273444',
       gray: '#8492a6',
-      'gray-light': '#d3dce6',
+      'gray-light': '#d3dce6'
     },
     fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
+      sans: ['Oswald', '"Open Sans"', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
-    },
-    extend: {
-      spacing: {
-        '8xl': '96rem',
-        '9xl': '128rem',
-      },
-      borderRadius: {
-        '4xl': '2rem',
-      },
-    },
-  },
-  plugins: [],
-};
+      display: ['Oswald', '"Open Sans"', 'sans-serif'],
+      body: ['Graphik', 'Oswald', '"Open Sans"', 'sans-serif']
+    }
+  }
+});

@@ -1,9 +1,9 @@
 <script>
-  import Icon from '@iconify/svelte';
-  import searchIcon from '@iconify/icons-bx/search';
-  function onSearch(event) {
-    console.log('filterResults: ', event);
-  }
+import Icon from '@iconify/svelte';
+import searchIcon from '@iconify/icons-bx/search';
+function onSearch(event) {
+  console.log('filterResults: ', event);
+}
 </script>
 
 <div class="z-40 select-none bg-gray-300">
@@ -31,13 +31,13 @@
   </div>
 </div>
 
-<style type="postcss">
-  /* see: https://tailwindcss.com/docs/hover-focus-and-other-states */
-  button {
-    @apply rounded-t-md border border-teal-800 bg-teal-400 py-5 pt-4 pb-5 text-center text-lg font-medium text-white;
-  }
+<style scoped lang="postcss">
+/* see: https://tailwindcss.com/docs/hover-focus-and-other-states */
+button {
+  @apply rounded-t-md border border-teal-800 bg-teal-400 py-5 pt-4 pb-5 text-center text-lg font-medium text-white;
+}
 
-  .form-text {
-    @apply h-ful relative block w-full appearance-none rounded-t-md border border-gray-300 px-3 py-2 text-2xl placeholder-gray-500;
-  }
+.form-text {
+  @apply relative block h-full w-full appearance-none rounded-t-md border border-gray-300 px-3 py-2 text-2xl placeholder-gray-500;
+}
 </style>

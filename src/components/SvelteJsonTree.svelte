@@ -1,32 +1,32 @@
 <script>
-  // @ts-nocheck
-  import JsonTree from 'svelte-json-tree';
-  import {onMount} from 'svelte';
-  import {apiData, routers, routerTitles} from '../stores.js';
-  // import * as routers from '../../db.json';
+// @ts-nocheck
+import JsonTree from 'svelte-json-tree';
+import {onMount} from 'svelte';
+// import {apiData, routers, routerTitles} from '../stores.js';
+// import * as routers from '../../db.json';
 
-  let value = [];
+const ROUTERS_API = import.meta.env.VITE_ROUTERS_API;
 
-  const ROUTERS_API = import.meta.env.VITE_ROUTERS_API;
+let emptyData = {
+  title: '',
+  url: '',
+  tags: []
+};
 
-  const emptyData = {
-    title: '',
-    url: '',
-    tags: [],
-  };
+// render with vite backend
+//const value = Routers.routers || emptyData;
+//console.log(JSON.stringify(value));
 
-  // render with vite backend
-  //const value = Routers.routers || emptyData;
-  //console.log(JSON.stringify(value));
+// render with fetch and async await
+let value = [];
 
-  // render with fetch and async await
-  onMount(async () => {
-    const res = await fetch(ROUTERS_API);
-    value = await res.json();
-  });
+onMount(async () => {
+  const res = await fetch(ROUTERS_API);
+  value = (await res.json()) || emptyData;
+});
 
-  // render with fetch and promises
-  /* fetch(ROUTERS_API)
+// render with fetch and promises
+/* fetch(ROUTERS_API)
   .then(response => response.json())
   .then(data => {
 	console.log(data);
@@ -48,10 +48,12 @@
   <JsonTree {value} />
 {:catch error}
   <!-- rejected -->
-  <p class="text-red-600">Something went wrong: {error.message}</p>
+  <p class="text-red-600">Something went wrong! (Error: {error.message})</p>
 {/await}
 
 <h1>simple if/else</h1>
 {#if value}
   <JsonTree {value} />
+{:else}
+  <p class="text-red-600">Something went wrong!</p>
 {/if}

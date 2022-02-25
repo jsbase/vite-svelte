@@ -1,29 +1,35 @@
 @tailwind base;
 
-body {
-  @apply font-sans bg-slate-600;
-}
-
-h1 {
-  @apply text-5xl font-semibold;
-}
-
-h2 {
-  @apply text-4xl font-semibold;
-}
-
-h3 {
-  @apply text-3xl font-semibold;
-}
-
-h4 {
-  @apply text-2xl font-semibold;
-}
-
-h5 {
-  @apply text-xl font-semibold;
-}
-
 @tailwind components;
 
 @tailwind utilities;
+
+@layer base {
+    html {
+        @apply font-sans;
+    }
+
+    body {
+        @apply font-sans bg-slate-600;
+    }
+
+    h1 {
+        @apply text-5xl font-semibold;
+    }
+
+    h2 {
+        @apply text-4xl font-semibold;
+    }
+
+    h3 {
+        @apply text-3xl font-semibold;
+    }
+
+    h4 {
+        @apply text-2xl font-semibold;
+    }
+
+    h5 {
+        @apply text-xl font-semibold;
+    }
+}

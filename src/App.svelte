@@ -3,14 +3,15 @@ import Logo from './components/Logo.svelte';
 import SearchBar from './components/SearchBar.svelte';
 import SvelteJsonTree from './components/SvelteJsonTree.svelte';
 import SvelteForm from './components/SvelteForm.svelte';
-import "./index.css";
+import './index.css';
 </script>
 
 <header>
   <Logo />
 
   <div class="text-5xl font-extrabold">
-    <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+    <span
+      class="bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent">
       lancom help center
     </span>
   </div>
@@ -33,16 +34,16 @@ import "./index.css";
   </ul>
 </footer>
 
-<style type="postcss">
+<style global lang="postcss">
 header {
-  @apply sans-serif mb-6 px-6;
+  @apply mb-6 px-6;
 }
 main {
-  @apply text-gray-700 relative z-0 flex min-h-full w-full min-w-full items-center justify-center space-y-1 overflow-x-hidden overflow-y-scroll py-12 px-4 font-sans;
+  @apply relative z-0 flex min-h-full w-full min-w-full items-center justify-center space-y-1 overflow-x-hidden overflow-y-scroll py-12 px-4 text-gray-700;
 }
 
 footer {
-  @apply sans-serif w-full px-6 pb-6;
+  @apply w-full px-6 pb-6;
 }
 
 ul {
