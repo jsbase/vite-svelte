@@ -43,7 +43,7 @@ onMount(() => {
   );
 
   // directly subscribe to form state change
-  //form.subscribe(onChange);
+  form.subscribe(onChange);
 
   // or use shorthand access
   console.log('Initial validation: ', $form.valid);
@@ -52,32 +52,44 @@ onMount(() => {
   console.log('form.data(): ', form.data());
 });
 
-/* $: titleField = form.field('title');
+/*
+$: titleField = form.field('title');
 $: titleValue = titleField.value;
-$: isValidTitle = titleField.state.valid; */
+$: isValidTitle = titleField.state.valid;
+*/
 
-/* function getPayload() {
+function getPayload() {
   console.log('getPayload: ', form.data());
   return form.data();
-} */
+}
 
-/*
+function onChange() {
+  console.group('onChange');
+  console.log('form: ', form);
+  console.log('$form: ', $form);
+  console.log('form.data(): ', form.data());
+  console.log('$form.valid: ', $form.valid);
+  console.groupEnd();
+
+  form.validate();
+}
+
 function onSubmit() {
   console.group('onSubmit');
   console.log('form: ', form);
-  console.log('form.data(): ', form.data());
   console.log('$form: ', $form);
+  console.log('form.data(): ', form.data());
   console.log('$form.valid: ', $form.valid);
   console.groupEnd();
 
   form.validate();
 
-  addRouter(getPayload());
+  if ($form.valid) {
+    addRouter(getPayload());
+  }
 }
-// on:click={onSubmit}
-*/
 
-/* async function addRouter(payload) {
+async function addRouter(payload) {
   const body = JSON.stringify(payload);
   const options = {method, headers, body};
 
@@ -87,53 +99,75 @@ function onSubmit() {
   } catch (errMsg) {
     throw new Error(errMsg);
   }
-} */
+}
 </script>
 
+<!-- <form on:submit|preventDefault={onSubmit}> -->
 <fieldset>
   <div class="flex flex-col-reverse">
     <input
-      class="input {!false ? 'error' : ''}"
-      type="text"
+      class="form-input rounded px-4 py-3 focus:border-transparent focus:shadow-xl focus:outline-none {!false
+        ? 'error'
+        : ''}"
+      type="email"
       name="title"
       id="router_title"
+      placeholder="The routers title"
       value="" />
     <label for="router_title">Title</label>
-    <p class="validation">Does your title looks liuke this? "test@bla.de"</p>
+    <p class="validation">Does your title looks like this? "test@bla.de"</p>
+  </div>
+  <div class="mt-5 flex flex-col-reverse">
+    <input
+      class="form-input rounded px-4 py-3 focus:border-transparent focus:shadow-xl focus:outline-none {!false
+        ? 'error'
+        : ''}"
+      type="url"
+      name="url"
+      placeholder="The routers url"
+      id="router_url"
+      value="" />
+    <label for="router_url">URL</label>
+    <p class="validation">Does your url looks like this? "www.domain.com"</p>
   </div>
   <!-- <TextInput name="title" {form} /> -->
   <!-- <TextInput name="url" {form} /> -->
 </fieldset>
 
-<fieldset class="flex flex-col-reverse">
-  <input id="tag-1" name="tag" type="checkbox" class="toggle-checkbox" />
-  <label for="tag-1">One</label>
+<fieldset class="flex flex-row">
+  <div class="ml-0">
+    <input id="tag-1" name="tag" type="checkbox" class="toggle-checkbox" />
+    <label for="tag-1">One</label>
+  </div>
 
-  <input id="tag-2" name="tag" type="checkbox" class="toggle-checkbox" />
-  <label for="tag2">Two</label>
+  <div class="ml-8">
+    <input id="tag-2" name="tag" type="checkbox" class="toggle-checkbox" />
+    <label for="tag-2">Two</label>
+  </div>
 
-  <input id="tag-3" name="tag" type="checkbox" class="toggle-checkbox" />
-  <label for="tag-3">Three</label>
+  <div class="ml-8">
+    <input id="tag-3" name="tag" type="checkbox" class="toggle-checkbox" />
+    <label for="tag-3">Three</label>
+  </div>
 </fieldset>
 
-<Button>
+<Button type="submit">
   <Icon icon={save24Filled} />
   <span class="group-focus:hidden">Submit</span>
 </Button>
 
+<!-- </form> -->
 <style scoped lang="postcss">
 fieldset {
-  @apply border-transparent p-2;
+  @apply py-4;
 }
 .validation {
   @apply hidden text-red-600;
 }
-
 .toggle-checkbox {
-  @apply absolute block h-6 w-6 cursor-pointer appearance-none rounded border-4 bg-white;
+  @apply mr-2 h-6 w-6 cursor-pointer rounded border outline-offset-0;
 }
-
-.toggle-checkbox + label {
-  @apply text-xs text-gray-700;
+label {
+  @apply cursor-pointer font-bold;
 }
 </style>

@@ -1,7 +1,6 @@
 module.exports = () => ({
-  content: ['./index.html', './src/**/*.svelte'],
+  content: ['./index.html', './src/**/*.{html,js,svelte}'],
   darkMode: 'media',
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
   theme: {
     fontFamily: {
       sans: [
@@ -16,5 +15,6 @@ module.exports = () => ({
         'system-ui'
       ]
     }
-  }
+  },
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')]
 });

@@ -1,20 +1,16 @@
 <script>
-const colors = {
-  indigo: 'bg-indigo-500 hover:bg-indigo-600 text-white'
-};
-
-const sizes = {
-  md: 'px-4 py-2 rounded-md text-base'
-};
+const indigo = 'bg-indigo-500 hover:bg-indigo-600 text-white';
+const size = 'px-5 py-3 font-bold text-base';
+export let type;
 </script>
 
-<button class="btn {colors.indigo} md:{sizes.md}">
+<button {type} class="btn {indigo} {size}">
   <slot />
 </button>
 
 <style global lang="postcss">
 .btn {
-  @apply flex items-stretch rounded-lg px-5 py-3 text-center align-middle text-lg font-bold;
+  @apply flex items-stretch rounded border-transparent text-center align-middle outline-offset-0;
 }
 svg {
   @apply mt-1 mr-3;

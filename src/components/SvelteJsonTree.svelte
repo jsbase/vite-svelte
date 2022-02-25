@@ -1,5 +1,4 @@
 <script>
-// @ts-nocheck
 import JsonTree from 'svelte-json-tree';
 import {onMount} from 'svelte';
 // import {apiData, routers, routerTitles} from '../stores.js';

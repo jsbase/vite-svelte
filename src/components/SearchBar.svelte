@@ -14,28 +14,30 @@ function onSearch(event) {
 </script>
 
 <!-- svelte-ignore a11y-autofocus -->
-<nav class="container mx-auto py-4">
-  <input
-    id="searchfield"
-    type="search"
-    placeholder="What are you looking for?"
-    autofocus="autofocus"
-    class="form-text focus:border-transparent focus:shadow-xl focus:outline-none" />
+<nav>
+  <form action="http://localhost:3303/routers" method="post">
+    <input
+      id="searchfield"
+      type="search"
+      placeholder="What are you looking for?"
+      autofocus="autofocus"
+      class="form-input rounded border-transparent px-4 py-3 focus:shadow-xl focus:outline-none" />
 
-  <Button>
-    <Icon icon={searchIcon} />
-    <span class="group-focus:hidden">Search</span>
-  </Button>
+    <Button>
+      <Icon icon={searchIcon} />
+      <span class="group-focus:hidden">Search</span>
+    </Button>
+  </form>
 </nav>
 
 <style global lang="postcss">
 nav {
-  @apply flex w-full grow flex-col;
+  @apply container mx-auto w-full;
 }
-.form-text {
-  @apply w-full appearance-none rounded border bg-white p-6 p-2 text-xl leading-normal text-gray-800 shadow transition;
+form {
+  @apply flex w-full flex-row py-4;
 }
-button {
-  @apply rounded bg-indigo-500 py-2 px-4 font-bold text-white;
+input {
+  @apply mr-5 grow appearance-none rounded border bg-white p-6 p-2 text-xl leading-normal text-gray-800 shadow outline-offset-0 transition;
 }
 </style>

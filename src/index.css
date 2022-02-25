@@ -10,7 +10,7 @@ html {
 
 @layer base {
     body {
-        @apply font-sans;
+        @apply bg-slate-300;
     }
 
     h1 {
@@ -30,6 +30,10 @@ html {
     }
 
     h5 {
-        @apply text-xl font-extrabold;
+        @apply text-xl font-semibold;
+    }
+
+    button, input, select, a, label {
+        @apply cursor-pointer;
     }
 }

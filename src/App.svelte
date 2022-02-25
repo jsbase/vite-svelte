@@ -39,11 +39,14 @@ import SvelteForm from './components/SvelteForm.svelte';
 </footer>
 
 <style global lang="postcss">
+:global(body) {
+  @apply bg-slate-300 font-sans;
+}
 header {
-  @apply mb-6 bg-slate-500 px-6;
+  @apply mb-6 px-6;
 }
 h1 {
-  @apply mt-6 text-center;
+  @apply mt-6 text-center text-5xl font-extrabold text-slate-900;
 }
 main {
   @apply relative z-0 min-h-full w-full min-w-full items-center justify-center space-y-1 overflow-x-hidden overflow-y-scroll py-12 px-4 text-gray-700;
@@ -53,5 +56,8 @@ footer {
 }
 ul {
   @apply flex align-middle;
+}
+a {
+  @apply outline-offset-0;
 }
 </style>
