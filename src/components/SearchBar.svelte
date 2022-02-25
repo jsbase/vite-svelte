@@ -1,27 +1,43 @@
 <script>
- /**
-  * See: https://tailwindcss.com/docs/hover-focus-and-other-states
-  */
- function filterResults (event) {
-   console.log('filterResults: ', event);
- }
+  import Icon from '@iconify/svelte';
+  import searchIcon from '@iconify/icons-bx/search';
+  function onSearch(event) {
+    console.log('filterResults: ', event);
+  }
 </script>
 
-<div class="fixed top-0 left-0 w-full h-full bg-gray-200 z-40 select-none">
-  <div class="w-4/6 z-50 relative mx-auto mt-36">
-    <div class="bg-white w-full h-16 rounded-xl mb-3 shadow-lg p-2">
-      <input type="text" placeholder="Search" class="form-text w-full h-full text-2xl rounded-lg focus:outline-none focus:ring focus:border-blue-300" />
+<div class="z-40 select-none bg-gray-300">
+  <div class="relative z-50 mx-auto mt-36 w-4/6">
+    <div class="mb-3 h-16 w-full rounded-xl bg-white p-2 shadow-lg">
+      <!-- svelte-ignore a11y-autofocus -->
+      <input
+        name="search"
+        type="text"
+        placeholder="Search"
+        autofocus
+        class="form-text focus:border-blue-300 focus:outline-none focus:ring"
+      />
     </div>
-    <button title="search" type="button" on:click={filterResults}>🕵️ Search</button>
+
+    <button
+      title="search"
+      type="button"
+      class="rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"
+      on:click={onSearch}
+    >
+      <Icon icon={searchIcon} class="mr-4" />
+      <span>Search</span>
+    </button>
   </div>
 </div>
 
 <style type="postcss">
+  /* see: https://tailwindcss.com/docs/hover-focus-and-other-states */
   button {
-    @apply pt-4 py-5 pb-5;
+    @apply rounded-t-md border border-teal-800 bg-teal-400 py-5 pt-4 pb-5 text-center text-lg font-medium text-white;
   }
 
   .form-text {
-    @apply appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 rounded-t-md;
+    @apply h-ful relative block w-full appearance-none rounded-t-md border border-gray-300 px-3 py-2 text-2xl placeholder-gray-500;
   }
 </style>

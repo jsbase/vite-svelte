@@ -4,26 +4,18 @@
       "id": 1,
       "title": "Good Router 5000",
       "url": "https://www.duckduckgo.com/",
-      "tags": [
-        "one",
-        "three"
-      ]
+      "tags": ["one", "three"]
     },
     {
       "title": "Super DupaX",
       "url": "https:/brave.search.com",
-      "tags": [
-        "two"
-      ],
+      "tags": ["two"],
       "id": 2
     },
     {
       "title": "Mega Route",
       "url": "https://searx.me",
-      "tags": [
-        "two",
-        "three"
-      ],
+      "tags": ["two", "three"],
       "id": 3
     }
   ]

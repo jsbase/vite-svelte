@@ -1,35 +1,25 @@
-// @ts-nocheck
-import { writable, derived } from 'svelte/store';
+import {writable, derived} from 'svelte/store';
+import * as currentRouters from '../db.json';
 
 /**
-* Store data
-*/
-export const apiData = writable([]);
-
-export const routers = derived(apiData, ($apiData) => {
-  if ($apiData.routers) {
-    return $apiData.routers;
-  }
-
-  return [];
-});
+ * Store data
+ */
+export const apiData = writable(currentRouters);
+export const routers = derived(
+  apiData,
+  ($apiData) =>
+    $apiData?.routers.map((r) => {
+      r.title, r.url, r.tags;
+    }) || []
+);
 
 /**
-* Filter titles
-*/
+ * Filter titles
+ */
 export const routerTitles = derived(apiData, ($apiData) => {
   if ($apiData.routers.length) {
-    return $apiData.routers.map(router => router.title);
+    return $apiData.routers.map((router) => router.title);
   }
 
   return [];
 });
-
-/*
-import {get, writable} from 'svelte/store';
-import * as RouterDataBase from '../../db.json';
-
-let routes = writable(RouterDataBase);
-
-export const Routers = get(routes);
-*/

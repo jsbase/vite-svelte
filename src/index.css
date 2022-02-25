@@ -1,0 +1,35 @@
+@tailwind base;
+
+body {
+  @apply font-sans bg-indigo-200;
+}
+
+h1 {
+  @apply text-5xl font-semibold;
+}
+
+h2 {
+  @apply text-4xl font-semibold;
+}
+
+h3 {
+  @apply text-3xl font-semibold;
+}
+
+h4 {
+  @apply text-2xl font-semibold;
+}
+
+h5 {
+  @apply text-xl font-semibold;
+}
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer utilities {
+  .bg-gradient--blue {
+    @apply bg-gradient-to-r from-cyan-500 to-blue-500;
+  }
+}

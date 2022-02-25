@@ -1,7 +1,7 @@
 <script>
   import Logo from './components/Logo.svelte';
   import SearchBar from './components/SearchBar.svelte';
-  import SvelteJsonTree from './components/SvelteJsonTree.svelte'
+  import SvelteJsonTree from './components/SvelteJsonTree.svelte';
   import SvelteForm from './components/SvelteForm.svelte';
 </script>
 
@@ -28,15 +28,14 @@
 
 <style type="postcss">
   header {
-    @apply px-6 mb-6 sans-serif;
+    @apply sans-serif mb-6 px-6;
   }
-
   main {
-    @apply px-6 pb-6 sans-serif;
+    @apply relative z-0 flex min-h-full w-full min-w-full items-center justify-center space-y-1 overflow-x-hidden overflow-y-scroll py-12 px-4 font-sans text-gray-700;
   }
 
   footer {
-    @apply w-full px-6 pb-6 sans-serif;
+    @apply sans-serif w-full px-6 pb-6;
   }
 
   ul {

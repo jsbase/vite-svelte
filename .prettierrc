@@ -1,5 +1,9 @@
 {
   "bracketSpacing": false,
   "singleQuote": true,
-  "svelteSortOrder": "scripts-markup-styles"
+  "svelteSortOrder": "options-scripts-markup-styles",
+  "svelteStrictMode": false,
+  "svelteAllowShorthand": true,
+  "svelteIndentScriptAndStyle": false,
+  "svelteBracketNewLine": false
 }

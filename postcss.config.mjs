@@ -1,9 +1,14 @@
 module.exports = {
+  map: false,
+  parser: 'sugarss',
   plugins: [
     require('postcss-import'),
-    require('tailwindcss/nesting')(require('postcss-nesting')),
     require('tailwindcss'),
-    require('postcss-preset-env')({ features: { 'nesting-rules': false } }) ],
+    require('tailwindcss/nesting')(require('postcss-nesting')),
+    require('postcss-preset-env')({features: {'nesting-rules': false}}),
+    require('autoprefixer'),
+  ],
+  syntax: 'postcss-scss',
 };
 /*
 import PostCssImporter from 'postcss-import';
