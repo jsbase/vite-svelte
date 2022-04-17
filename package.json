@@ -19,8 +19,8 @@
     "format:eslint": "prettier-eslint --write './src/**/*.svelte'"
   },
   "devDependencies": {
-    "@iconify/icons-akar-icons": "^1.2.1",
-    "@iconify/icons-ant-design": "^1.2.2",
+    "@iconify/icons-akar-icons": "^1.2.3",
+    "@iconify/icons-ant-design": "^1.2.1",
     "@iconify/icons-bx": "^1.2.1",
     "@iconify/icons-carbon": "^1.2.2",
     "@iconify/icons-codicon": "^1.2.3",
