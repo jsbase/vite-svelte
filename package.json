@@ -62,7 +62,7 @@
     "stylelint-config-recommended-scss": "^5.0.2",
     "stylelint-config-standard": "^25.0.0",
     "stylelint-scss": "^4.1.0",
-    "svelte": "^3.46.4",
+    "svelte": "^3.49.0",
     "svelte-check": "^2.4.5",
     "svelte-json-tree": "^0.1.0",
     "svelte-preprocess": "^4.10.4",
