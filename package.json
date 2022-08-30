@@ -72,6 +72,6 @@
   "dependencies": {
     "json-server": "^0.17.0",
     "node-sass": "^7.0.1",
-    "vite": "^2.8.6"
+    "vite": "^2.9.13"
   }
 }
